@@ -22,7 +22,9 @@
           <div class="navbar-item">
           </div>
           <div class="navbar-item">
-            <p class="is-size-4"><%= session[:user]["name"]%></p>
+            <% if session[:user] %>
+              <%= link_to session[:user]["name"], "/users/" + session[:user]["id"].to_s, class:"is-size-5 has-text-white"%>
+            <% end %>
           </div>
         </div>
         <div class="navbar-end">

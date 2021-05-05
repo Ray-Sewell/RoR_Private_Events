@@ -1,8 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<%= link_to 'Back', users_path %>
+<div class="panel">
+  <div class="panel-heading">
+  </div>
+  <div class="panel-tabs">
+    <a class="is-active">Created</a>
+    <a>Ended</a>
+    <a>Invited</a>
+    <a>Cancelled</a>
+  </div>
+  <% @user.created_events.each do |event| %>
+    <%= link_to event.name, event, class:"panel-block"%>
+  <% end %>
+</div>
