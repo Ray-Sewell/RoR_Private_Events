@@ -66,11 +66,12 @@ class EventsController < ApplicationController
     def set_event
       @event = Event.find(params[:id])
     end
+    # Returns current user stored in session
     def find_user_session
       @user = User.find(session[:user]["id"])
     end
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:name, :location, :time)
+      params.require(:event).permit(:name, :location, :time, :description)
     end
 end
