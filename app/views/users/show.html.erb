@@ -3,16 +3,22 @@
   <p class="title"><%=@user.name%>'s events</p>
 </div>
 
-<div class="panel">
-  <div class="panel-heading">
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4">Created Events</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <% if @user.created_events.empty?%>
+        <p>There are no events to diplay!</p>
+      <% else%>
+        <% @user.created_events.each do |event| %>
+          <%= link_to event.name, event, class:"panel-block"%>
+        <% end %>
+      <% end%>
+    </div>
   </div>
-  <div class="panel-tabs">
-    <a class="is-active">Created</a>
-    <a>Ended</a>
-    <a>Invited</a>
-    <a>Cancelled</a>
-  </div>
-  <% @user.created_events.each do |event| %>
-    <%= link_to event.name, event, class:"panel-block"%>
-  <% end %>
 </div>

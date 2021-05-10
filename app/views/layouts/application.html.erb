@@ -41,6 +41,17 @@
         </div>
       </div>
     </nav>
+    <% if flash[:notice] %>
+      <div class="notification is-info global-notification p-2">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="notification is-warning global-notification p-2">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+    <div class="block"></div>
     <div class="level-item">
       <div class="column is-half">
         <%= yield %>

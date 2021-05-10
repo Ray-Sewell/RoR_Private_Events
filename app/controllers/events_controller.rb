@@ -8,6 +8,8 @@ class EventsController < ApplicationController
 
   # GET /events/1 or /events/1.json
   def show
+    find_user_session
+    @event_attendee = EventAttendee.new
   end
 
   # GET /events/new

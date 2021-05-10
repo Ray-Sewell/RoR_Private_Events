@@ -1,0 +1,10 @@
+<%= form_for @event_attendee do |form| %>
+    <%= form.hidden_field :event_id, value: @event.id %>
+    <div class="field">
+        <%= form.text_field :attendee_id, class:"input" %>
+    </div>
+
+    <div class="actions has-text-centered">
+        <%= form.submit "Invite User", class:"button is-danger" %>
+    </div>
+<% end %>
