@@ -14,4 +14,8 @@
  *= require_self
  */
 
- @import "bulma"
+ @import "bulma";
+
+.notification {
+    border-radius: 0px;
+}

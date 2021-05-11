@@ -26,7 +26,7 @@
               <%= link_to session[:user]["name"], "/users/" + session[:user]["id"].to_s, class:"is-size-5 has-text-white"%>
             </div>
             <div class="navbar-item">
-              <%= link_to 'New Event', new_event_path, class:"button is-link" %>
+              <%= link_to 'New Event', new_event_path, class:"button is-info" %>
             </div>
           <% end %>
         </div>
@@ -51,11 +51,6 @@
         <p class="alert"><%= alert %></p>
       </div>
     <% end %>
-    <div class="block"></div>
-    <div class="level-item">
-      <div class="column is-half">
-        <%= yield %>
-      </div>
-    </div>
+    <%= yield %>
   </body>
 </html>

@@ -1,20 +1,50 @@
 <div class="block"></div>
-<div class="block level-item">
-  <p class="title">All upcoming events</p>
-</div>
 
-<% @events.each do |event| %>
-  <div class="block">
-    <div class="card">
-      <div class="card-content">
-        <%= link_to event.name, event, class:"title"%><br>
-        <p class="subtitle"><%= event.location %></p>
-        <p><%= event.description%></p>
+<div class="block level-item">
+  <div class="column is-three-quarters">
+    <div class="columns">
+      <div class="column is-half">
+        <div class="has-text-centered">
+          <p class="title">All upcoming events</p>
+        </div>
+        <div class="block"></div>
+        <% @events.upcoming.each do |event| %>
+          <div class="block">
+            <div class="card">
+              <div class="card-content">
+                <%= link_to event.name, event, class:"title"%><br>
+                <p class="subtitle"><%= event.location %></p><br>
+                <p><%= event.description%></p>
+              </div>
+              <footer class="card-footer">
+                <p class="card-footer-item"><%= event.time.to_formatted_s(:long_ordinal) %></p>
+                <%= link_to event.creator.name, event.creator, class:"card-footer-item"%>
+              </footer>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <footer class="card-footer">
-        <p class="card-footer-item"><%= event.time%></p>
-        <%= link_to event.creator.name, event.creator, class:"card-footer-item"%>
-      </footer>
+      <div class="column is-half">
+        <div class="has-text-centered">
+          <p class="title">All past events</p>
+        </div>
+        <div class="block"></div>
+        <% @events.past.each do |event| %>
+          <div class="block">
+            <div class="card">
+              <div class="card-content">
+                <%= link_to event.name, event, class:"title"%><br>
+                <p class="subtitle"><%= event.location %></p><br>
+                <p><%= event.description%></p>
+              </div>
+              <footer class="card-footer">
+                <p class="card-footer-item"><%= event.time.to_formatted_s(:long_ordinal) %></p>
+                <%= link_to event.creator.name, event.creator, class:"card-footer-item"%>
+              </footer>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-<% end %>
+</div>

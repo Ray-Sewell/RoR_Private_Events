@@ -1,0 +1,15 @@
+
+<div class="block">
+    <div class="panel">
+        <div class="panel-heading">
+            <p>Who's invited?</p>
+        </div>
+        <% if @event.attendees.empty? %>
+            <p class="panel-block">Looks like noones invited!</p>
+        <% else %>
+            <% @event.attendees.each do |attendee| %>
+                <%= link_to attendee.name, attendee, class:"panel-block" %>
+            <% end %>
+        <% end %>
+    </div>
+</div>

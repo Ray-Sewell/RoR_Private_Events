@@ -12,26 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class:"label" %>
+    <%= form.text_field :name, class:"input" %>
   </div>
 
   <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
+    <%= form.label :location, class:"label" %>
+    <%= form.text_field :location, class:"input" %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.label :description, class:"label" %>
+    <%= form.text_field :description, class:"textarea" %>
   </div>
 
   <div class="field">
-    <%= form.label :time %>
+    <%= form.label :time, class:"label" %>
     <%= form.datetime_select :time %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="block"></div>
+  
+  <div class="actions has-text-centered">
+    <%= form.submit "Create Event", class:"button is-success" %>
   </div>
 <% end %>
